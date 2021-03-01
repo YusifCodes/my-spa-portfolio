@@ -308,7 +308,7 @@
 
 .mail-input-pos {
   position: relative;
-  top: 20vh;
+  top: 15vh;
   left: 2vh;
   width: 80vw;
 }
@@ -335,7 +335,7 @@
 
 .text-input-pos {
   position: relative;
-  top: 20vh;
+  top: 15vh;
   left: 2vh;
   width: 85vw;
 }
@@ -352,7 +352,7 @@
   background-color: #474747;
   opacity: 0.75;
   position: relative;
-  top: 22.5vh;
+  top: 17.5vh;
   width: 25vw;
   padding: 1.5vh;
   text-align: center;
@@ -462,7 +462,7 @@
   }
 
   .line-pos-contact{
-    top: 17.5vh;
+    top: 12.5vh;
     left: 3vw;
   }
 
@@ -554,6 +554,10 @@
     font-size: 5vh;
     top: 15vh;
     left: 3vw;
+  }
+
+  .line-pos-contact{
+    top: 12.5vh;
   }
 
   .mail-title{
@@ -710,7 +714,7 @@
   }
 
   .button-pos{
-    top: -9.5vh;
+    top: 0vh;
   }
 
 }
@@ -921,7 +925,7 @@
 
   .button-pos{
     left: 15vw;
-    top: -7vh;
+    top: 2vh;
   }
 
   
