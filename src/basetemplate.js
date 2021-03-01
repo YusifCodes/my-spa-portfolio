@@ -24,23 +24,23 @@ class BaseTemplate extends React.Component {
 
               <ul className='nav-links'>
                 <li>
-                  <Link to='/' className='home-link'>
-                    /home
+                  <Link to='/' onClick={()=> {console.log("helllooo")}} className='home-link'>
+                    <span className="hash-span">/</span>home
                   </Link>
                 </li>
                 <li>
                   <Link to='/about' className='about-link'>
-                    /about me
+                  <span className="hash-span">/</span>about
                   </Link>
                 </li>
                 <li>
                   <Link to='/experience' className='experience-link'>
-                    /experience
+                  <span className="hash-span">/</span>experience
                   </Link>
                 </li>
                 <li>
                   <Link to='/contact' className='contact-link'>
-                    /contact me
+                  <span className="hash-span">/</span>contact
                   </Link>
                 </li>
               </ul>

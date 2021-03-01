@@ -32,7 +32,7 @@ function Home() {
         ".home-article",
         {
           opacity: 0,
-          y: 150,
+          y: 50,
           duration: 1,
         },
         { opacity: 1, y: 0, visibility: "visible" }, "-=0.5"

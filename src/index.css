@@ -37,7 +37,7 @@
 
 .title-style {
   color: #e6e6e6;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   font-weight: 400;
 }
 
@@ -57,7 +57,7 @@
 .line {
   background-color: #e6e6e6;
   width: 35px;
-  height: 0.25em;
+  height: 0.2em;
   margin: 0.3em;
   display: block;
   border-radius: 10px;
@@ -75,7 +75,7 @@
   pointer-events: none;
   z-index: 2 !important;
   text-align: center;
-  font-size: 7vh;
+  font-size: 6vh;
   font-family: "anton", cursive;
   color: #e2e2e2;
   transition: all 0.5s ease-in-out;
@@ -85,7 +85,7 @@
 .nav-links li {
   position: relative;
   top: 5vh;
-  padding-top: 12.5vh;
+  padding-top: 11vh;
 }
 
 .nav-links li a {
@@ -102,7 +102,7 @@
 
 .hamburger {
   position: absolute;
-  top: 2.5vh;
+  top: 2vh;
   left: 1vw;
   height: 6vh;
   width: 5vh;
@@ -112,7 +112,7 @@
 /*HOME*/
 
 .home-title {
-  font-size: 8vh;
+  font-size: 7vh;
   position: relative;
   top: 12.5vh;
   left: 5vw;
@@ -122,7 +122,7 @@
 }
 
 .home-article {
-  font-size: 4.5vh;
+  font-size: 4vh;
   position: relative;
   width: 85vw;
   top: 16.5vh;
@@ -182,8 +182,8 @@
 
 .about-section {
   position: relative;
-  top: 10vh;
-  padding-top: 5vh;
+  top: 8vh;
+  padding-top: 3vh;
   font-size: 3vh;
   width: 90vw;
   left: 5vw;
@@ -194,7 +194,7 @@
 
 .line-pos-about {
   position: relative;
-  top: 12.5vh;
+  top: 11.5vh;
   left: 5vw;
 }
 
@@ -203,7 +203,7 @@
 .experience-title {
   color: #e6e6e6;
   position: relative;
-  top: 11.5vh;
+  top: 10vh;
   text-transform: uppercase;
   font-size: 1.75vh;
   left: 1vh;
@@ -222,8 +222,8 @@
 .section-pos {
   position: relative;
   left: 1vh;
-  top: 5vh;
-  padding-top: 10vh;
+  top: 7.5vh;
+  padding-top: 5vh;
   width: 93vw;
 }
 
@@ -274,7 +274,7 @@
   color: #e6e6e6;
   text-transform: uppercase;
   position: relative;
-  top: 12.5vh;
+  top: 10vh;
   left: 1vh;
   width: 70vw;
   visibility: hidden;
@@ -282,7 +282,7 @@
 
 .mail-title {
   position: relative;
-  top: 17.5vh;
+  top: 12.5vh;
   left: 2vh;
   font-size: 5.5vh;
   color: #e6e6e6;
@@ -292,13 +292,13 @@
 
 .line-pos-contact {
   position: relative;
-  top: 17.5vh;
+  top: 12.5vh;
   left: 2vh;
 }
 
 .contact-section {
   position: relative;
-  top: 20vh;
+  top: 15vh;
   left: 2vh;
   color: #949494;
   font-size: 4vh;
@@ -308,7 +308,7 @@
 
 .mail-input-pos {
   position: relative;
-  top: 25vh;
+  top: 20vh;
   left: 2vh;
   width: 80vw;
 }
@@ -335,7 +335,7 @@
 
 .text-input-pos {
   position: relative;
-  top: 25vh;
+  top: 20vh;
   left: 2vh;
   width: 85vw;
 }
@@ -352,7 +352,7 @@
   background-color: #474747;
   opacity: 0.75;
   position: relative;
-  top: 27.5vh;
+  top: 22.5vh;
   width: 25vw;
   padding: 1.5vh;
   text-align: center;
@@ -724,7 +724,23 @@
 /
 / */
 /* LAPTOPS AND BIG MONITORS */
-@media only screen and (min-width: 1367px){
+@media only screen and (min-width: 1025px){
+
+  .mesh {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    background-position: center;
+    background-size: 3.75em 3.75em;
+    background-image: linear-gradient(
+        rgba(201, 201, 201, 0.2) 0.1em,
+        transparent 0.1em
+      ),
+      linear-gradient(90deg, rgba(201, 201, 201, 0.2) 0.1em, transparent 0.1em);
+    z-index: 0;
+  }
+
   /* NAV */
   .nav-links {
     transition: all 1s ease-in-out;
@@ -750,8 +766,18 @@
     padding-right: 5vh;
   }
   /* HOME */
-  
+  .line{
+    height: .2em;
+    width: 1.85em
+  }
 
+  .title-style{
+    font-size: 1.5rem;
+  }
+
+  .header-title{
+    top: 2vh;
+  }
 
   .home-title{
     left: 17.5vw;
@@ -783,7 +809,7 @@
 
   .fa{
     left: 70vw;
-    font-size: 54px;
+    font-size: 3rem;
     z-index: 2 !important;
   }
 

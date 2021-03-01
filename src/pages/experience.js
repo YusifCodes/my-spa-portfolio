@@ -15,7 +15,7 @@ function Experience() {
       )
       .fromTo(
         ".d1",
-        { opacity: 0, duration: 1 , x: -150},
+        { opacity: 0, duration: 1 , x: -100},
         { opacity: 1, visibility: "visible", x: 0 }, "-=0.25"
       )
       .fromTo(
@@ -25,13 +25,13 @@ function Experience() {
       )
       .fromTo(
         ".d2",
-        { opacity: 0, duration: 0.5 ,  x: 150},
+        { opacity: 0, duration: 0.5 ,  x: 100},
         { opacity: 1, visibility: "visible", x: 0 },
         "-=0.25"
       )
       .fromTo(
         ".job",
-        { opacity: 0, duration: 1 ,x: 150},
+        { opacity: 0, duration: 1 ,x: 100},
         { opacity: 1, visibility: "visible", x: 0 },
         "-=0.25"
       )
