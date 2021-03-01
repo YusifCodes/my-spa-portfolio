@@ -1,13 +1,903 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.background {
+  background-color: #3a3a3a;
+  width: 100vw;
+  height: 100vh;
+}
+
+.mesh {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  background-position: center;
+  background-size: 5em 5em;
+  background-image: linear-gradient(
+      rgba(201, 201, 201, 0.2) 0.1em,
+      transparent 0.1em
+    ),
+    linear-gradient(90deg, rgba(201, 201, 201, 0.2) 0.1em, transparent 0.1em);
+  z-index: 0;
+}
+
+.header {
+  width: 100vw;
+  height: 7.5rem;
+  background-color: transparent;
+  position: absolute;
+  z-index: 3;
+}
+
+.title-style {
+  color: #e6e6e6;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.header-title {
+  text-align: right;
+  position: relative;
+  top: 1vh;
+  right: 2vw;
+  z-index: 4;
+}
+
+.home {
+  position: absolute;
+  z-index: 3;
+}
+
+.line {
+  background-color: #e6e6e6;
+  width: 35px;
+  height: 0.25em;
+  margin: 0.3em;
+  display: block;
+  border-radius: 10px;
+}
+
+.nav-links {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgb(56, 56, 56);
+  clip-path: circle(1px at -10% -10%);
+  top: 0vh;
+  -moz-clip-path: circle(1px at -1% -1%);
+  -webkit-clip-path: circle(1px at -1% -1%);
+  pointer-events: none;
+  z-index: 2 !important;
+  text-align: center;
+  font-size: 7vh;
+  font-family: "anton", cursive;
+  color: #e2e2e2;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.nav-links li {
+  position: relative;
+  top: 5vh;
+  padding-top: 12.5vh;
+}
+
+.nav-links li a {
+  color: #e2e2e2 !important;
+}
+
+.nav-links.open {
+  clip-path: circle(3000px at 0% 0%);
+  -webkit-clip-path: circle(3000px at 0% 0%);
+  -moz-clip-path: circle(3000px at 0% 0%);
+  pointer-events: all;
+  overflow: hidden;
+}
+
+.hamburger {
+  position: absolute;
+  top: 2.5vh;
+  left: 1vw;
+  height: 6vh;
+  width: 5vh;
+  z-index: 4;
+}
+
+/*HOME*/
+
+.home-title {
+  font-size: 8vh;
+  position: relative;
+  top: 12.5vh;
+  left: 5vw;
+  color: #e6e6e6;
+  width: 70vw;
+  visibility: hidden;
+}
+
+.home-article {
+  font-size: 4.5vh;
+  position: relative;
+  width: 85vw;
+  top: 16.5vh;
+  left: 5vw;
+  color: #949494;
+  visibility: hidden;
+}
+
+.red-text {
+  color: #ff5353;
+  text-decoration: underline;
+}
+
+.red-line {
+  width: 80vw;
+  height: 1vw;
+  background-color: #ff5353;
+  visibility: hidden;
+}
+
+.line-pos-home {
+  position: relative;
+  top: 13.5vh;
+  left: 5vw;
+}
+
+.fa-ul-list li {
+  display: inline;
+  visibility: hidden;
+}
+
+.fa {
+  font-size: 3rem;
+  padding: 0.4em;
+  color: #e6e6e6;
+  position: relative;
+  text-align: center;
+  top: 17.5vh;
+}
+
+.fa:last-child {
+  padding-right: none;
+}
+
+/* ABOUT */
+
+.about-title {
+  color: #e6e6e6;
+  position: relative;
+  top: 10vh;
+  text-transform: uppercase;
+  font-size: 1.75vh;
+  left: 1vh;
+  width: 70vw;
+  visibility: hidden;
+}
+
+.about-section {
+  position: relative;
+  top: 10vh;
+  padding-top: 5vh;
+  font-size: 3vh;
+  width: 90vw;
+  left: 5vw;
+  line-height: 4vh;
+  visibility: hidden;
+  color: #949494;
+}
+
+.line-pos-about {
+  position: relative;
+  top: 12.5vh;
+  left: 5vw;
+}
+
+/* EXPERIENCE */
+
+.experience-title {
+  color: #e6e6e6;
+  position: relative;
+  top: 11.5vh;
+  text-transform: uppercase;
+  font-size: 1.75vh;
+  left: 1vh;
+  width: 70vw;
+  visibility: hidden;
+}
+
+.div-title {
+  color: #949494;
+  font-size: 4.5vh;
+  text-decoration: underline;
+  width: 90vw;
+  visibility: hidden;
+}
+
+.section-pos {
+  position: relative;
+  left: 1vh;
+  top: 5vh;
+  padding-top: 10vh;
+  width: 93vw;
+}
+
+.languages-list li {
+  font-size: 3.25vh;
+  padding-top: 2vh;
+  color: #949494;
+  position: relative;
+  left: 2vw;
+  visibility: hidden;
+}
+
+.jobs{
+  visibility: hidden;
+}
+
+.job {
+  padding-top: 2.5vh;
+}
+
+.company {
+  font-size: 4vh;
+  color: #949494;
+}
+
+.time-employed {
+  font-size: 2.5vh;
+  color: #ff5353;
+}
+
+.job-title {
+  position: relative;
+  top: 1vh;
+  color: #949494;
+  font-size: 3.5vh;
+}
+
+.line-pos-experience {
+  position: relative;
+  top: 10vh;
+  left: 1vh;
+}
+
+/* CONTACT */
+
+.contact-title {
+  font-size: 1.75vh;
+  color: #e6e6e6;
+  text-transform: uppercase;
+  position: relative;
+  top: 12.5vh;
+  left: 1vh;
+  width: 70vw;
+  visibility: hidden;
+}
+
+.mail-title {
+  position: relative;
+  top: 17.5vh;
+  left: 2vh;
+  font-size: 5.5vh;
+  color: #e6e6e6;
+  width: 93vw;
+  visibility: hidden;
+}
+
+.line-pos-contact {
+  position: relative;
+  top: 17.5vh;
+  left: 2vh;
+}
+
+.contact-section {
+  position: relative;
+  top: 20vh;
+  left: 2vh;
+  color: #949494;
+  font-size: 4vh;
+  width: 80vw;
+  visibility: hidden;
+}
+
+.mail-input-pos {
+  position: relative;
+  top: 25vh;
+  left: 2vh;
+  width: 80vw;
+}
+
+.mail-input-placehodler {
+  color: #e6e6e6;
+  font-size: 3vh;
+  width: 93vw;
+  visibility: hidden;
+}
+
+.mail-input {
+  width: 80vw;
+  height: 3vh;
+  border: none;
+  opacity: 0.7;
+  border-radius: 10px;
+  padding: 1vh;
+  font-size: 2vh;
+  outline: none;
+  width: 80vw;
+  visibility: hidden;
+}
+
+.text-input-pos {
+  position: relative;
+  top: 25vh;
+  left: 2vh;
+  width: 85vw;
+}
+
+.text-input-placehodler {
+  color: #e6e6e6;
+  font-size: 3vh;
+  width: 93vw;
+  visibility: hidden;
+}
+
+.submit-btn {
+  border: 3px solid #ff5353;
+  background-color: #474747;
+  opacity: 0.75;
+  position: relative;
+  top: 27.5vh;
+  width: 25vw;
+  padding: 1.5vh;
+  text-align: center;
+  font-size: 2vh;
+  text-transform: uppercase;
+  color: #e6e6e6;
+  visibility: hidden;
+}
+
+.submit-btn:hover {
+  opacity: 1;
+}
+
+.button-pos {
+  text-align: center;
+}
+
+.text-input {
+  width: 87vw;
+  height: 20vh;
+  border: none;
+  opacity: 0.7;
+  border-radius: 10px;
+  padding: 1vh;
+  font-size: 2vh;
+  outline: none;
+  width: 85vw;
+  visibility: hidden;
+}
+/* 
+/
+/
+/
+/
+/
+/
+/
+/
+*/
+
+/* TABLET */
+@media screen and (min-width: 480px) {
+  /* HOME */
+  .home-title {
+    font-size: 7rem;
+    top: 7.5vh;
+  }
+
+  .home-article{
+    font-size: 3rem;
+    top: 10vh;
+    width: 75vw;
+  }
+
+  .red-line{
+    height: 0.5vh;
+    top: 7.5vh;
+  }
+
+  .fa{
+    top: 15vh;
+    left: 3vw;
+  }
+  /* ABOUT ME */
+  .about-title{
+    font-size: 2vh;
+  }
+
+  .about-section{
+    font-size: 4vh;
+    line-height: 5vh;
+    padding-top: 3vh;
+  }
+
+  .line-pos-about{
+    top: 15vh;
+  }
+  /* EXPERIENCE */
+
+  .experience-title{
+    font-size: 2vh;
+  }
+
+  .section-pos{
+    left: 3vw;
+    padding-top: 7.5vh;
+    top: 7.5vh;
+  }
+
+  .line-pos-experience{
+    left: 3vw;
+    top: 12.5vh;
+  }
+
+  /* CONTACT */
+
+  .contact-title{
+    font-size: 2vh;
+  }
+
+  .mail-title{
+    font-size: 6.5vh;
+  }
+
+  .contact-section{
+    font-size: 3rem;
+  }
+
+  .line-pos-contact{
+    top: 17.5vh;
+    left: 3vw;
+  }
+
+  .button-pos{
+    text-align: left;
+    position: relative;
+    left: 3vw;
+  }
+
+  form{
+    width: 85vw
+  }
+}
+/* 
+/
+/
+/
+/
+/
+/
+/
+/
+*/
+/* PHONE HORIZONTAL */
+@media only screen and (max-width: 924px) and (orientation: landscape){
+  /* HOME */
+  .mesh{
+    height: 180vh;
+  }
+
+  .background{
+    height: 180vh;
+  } 
+
+  .home-title{
+    font-size: 24vh ;
+  }
+
+  .home-article{
+    font-size: 8vh;
+  }
+
+  /* ABOUT */
+
+  .about-title{
+    font-size: 5vh;
+    top: 15vh;
+    left: 3vw;
+  }
+
+  .about-section{
+    padding-top: 7vh;
+    font-size: 8vh;
+    line-height: 13vh;
+  }
+
+  /* EXPERIENCE */
+
+  .experience-title{
+    font-size: 5vh;
+    top: 15vh;
+    left: 3vw;
+  }
+
+  .div-title{
+    font-size: 14vh;
+    padding-top: 5vh;
+  }
+
+  .languages-list li {
+    font-size: 8vh;
+  }
+
+  .company{
+    font-size: 10vh;
+  }
+
+  .time-employed{
+    font-size: 5vh;
+  }
+
+  .job-title{
+    font-size: 8vh;
+  }
+
+  /* CONTACT */
+
+  .contact-title{
+    font-size: 5vh;
+    top: 15vh;
+    left: 3vw;
+  }
+
+  .mail-title{
+    font-size: 14vh;
+    left: 3vw;
+  }
+
+  .contact-section{
+    font-size: 11vh;
+    left: 3vw;
+  }
+
+  .mail-input-pos{
+    left: 3vw;
+  }
+
+  .mail-input-placehodler{
+    font-size: 8vh;
+  }
+
+  .mail-input{
+    left: 5vw;
+    height: 14vh;
+    font-size: 6vh;
+  }
+
+  .text-input-pos{
+    left: 3vw;
+  }
+
+  .text-input-placehodler{
+    font-size: 8vh;
+  }
+
+  .text-input{
+    height: 30vh;
+    font-size: 6vh;
+  }
+
+  .submit-btn{
+    font-size: 6vh;
+  }
+}
+/* /
+/
+/
+/
+/
+/
+/ */
+/* TABLET HORIZONTAL */
+@media only screen and (min-device-width: 925px) and (orientation: landscape){
+  /* HOME */
+  .home-title{
+    font-size: 11vh;
+  }
+
+  /* ABOUT */
+
+  .about-title{
+    font-size: 3vh;
+    left: 3vw;
+  }
+
+  .about-section{
+    top: 12.5vh;
+    font-size: 5vh;
+    line-height: 7vh;
+  }
+
+  .line-pos-about{
+    top: 15vh;
+  }
+
+  /* EXPERIENCE */
+
+  .experience-title{
+    font-size: 3vh;
+    left: 3vw;
+  }
+
+  .section-pos {
+    left: 5vw;
+  }
+  
+  .div-title{
+    font-size: 6vh;
+  }
+
+  .languages-list li {
+    font-size: 4vh;
+  }
+
+  .job{
+    font-size: 5vh;
+  }
+
+  .time-employed{
+    font-size: 3vh;
+  }
+
+  .line-pos-experience{
+    top: 10vh;
+    left: 3vw;
+  }
+
+  /* CONTACT */
+
+  .contact-title{
+    font-size: 3vh;
+    left: 3vw;
+  }
+
+  .mail-title{
+    font-size: 8vh;
+    left: 3vw;
+    top: 12.5vh;
+  }
+
+  .line-pos-contact{
+    top: 12.5vh;
+  }
+
+  .contact-section{
+    left: 3vw;
+    top: 15vh;
+  }
+
+  .mail-input-placehodler{
+    font-size: 5vh;
+  }
+
+  .mail-input{
+    height: 6vh;
+    font-size: 4vh;
+  }
+
+  .mail-input-pos{
+    top: 13.5vh;
+    left: 3vw;
+  }
+
+  .text-input-placehodler{
+    font-size: 5vh;
+  }
+
+  .text-input-pos{
+    left: 3vw;
+    top: 14.5vh;
+  }
+
+  form{
+    width: 85vw
+  }
+
+  .button-pos{
+    top: -9.5vh;
+  }
+
+}
+
+/* /
+/
+/
+/
+/
+/
+/
+/ */
+/* LAPTOPS AND BIG MONITORS */
+@media only screen and (min-width: 1367px){
+  /* NAV */
+  .nav-links {
+    transition: all 1s ease-in-out;
+    position: absolute;
+    text-align: left;
+    height: 100vh;
+    width: 15vw;
+    font-size: 4vh;
+    background-color: transparent;
+    transition: 0.3s all ease-in-out;
+    left: -5vw;
+    opacity: 0;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    left: 0vw;
+  }
+
+  .nav-links li {
+    position: relative;
+    left: 2vw;
+    padding-right: 5vh;
+  }
+  /* HOME */
+  
+
+
+  .home-title{
+    left: 17.5vw;
+    top: 15vh;
+  }
+
+  .line-pos-home{
+    left: 17.5vw;
+    top: 17.5vh;
+  }
+
+  .red-line{
+    width: 40vw;
+  }
+
+  .home-article{
+    font-size: 5vh;
+    width: 40vw;
+    left: 17.5vw;
+    top: 20vh;
+  }
+
+  .fa-ul-list li {
+    display: block;
+    height: 5vw;
+    position: relative;
+    top: -40vh;
+  }
+
+  .fa{
+    left: 70vw;
+    font-size: 54px;
+    z-index: 2 !important;
+  }
+
+  /* ABOUT */
+  .about-title{
+    left: 12vw;
+    top: 10vh;
+  }
+
+  .about-section{
+    left: 15vw;
+    width: 70vw;
+    line-height: 7vh;
+  }
+
+  .line-pos-about{
+    left: 15vw;
+  }
+
+  /* EXPERIENCE */
+  .experience-title{
+    left: 12vw;
+    top: 10vh;
+    width: 30vw;
+  }
+
+  .section-pos{
+    left: 15vw;
+    width: 30vw;
+  }
+
+  .horizontal-section{
+    left: 50vw;
+    top: -43.5vh;
+    width: 30vw;
+  }
+
+  .languages-list{
+    width: 30vw;
+  }
+
+  .div-title{
+    width: 40vw;
+  }
+
+  .line-pos-experience{
+    left: 15vw;
+    top: -10vh;
+  }
+
+  /* CONTACT */
+
+  .contact-title{
+    left: 12vw;
+    top: 10vh;
+    width: 30vw;
+  }
+
+  .mail-title{
+    left: 15vw;
+    width: 40vw;
+  }
+
+  .line-pos-contact{
+    left: 15vw;
+  }
+
+  .contact-section{
+    left: 15vw;
+    width: 30vw;
+    font-size: 4vh
+  }
+
+  .mail-input-placehodler{
+    font-size: 4vh;
+    left: 15vw;
+    width: 30vw;
+  }
+  
+  .mail-input{
+    width: 40vw;
+    height: 5vh;
+    font-size: 3vh;
+  }
+
+  .mail-input-pos{
+    top: 17.5vh;
+    left: 15vw;
+  }
+
+  .text-input{
+    width: 50vw;
+    font-size: 3vh;
+  }
+
+  .text-input-placehodler{
+    font-size: 4vh;
+    width: 30vw;
+  }
+
+  .text-input-pos{
+    top: 17.5vh;
+    left: 15vw;
+  }
+
+  .submit-btn{
+    width: 10vw;
+  }
+
+  .button-pos{
+    left: 15vw;
+    top: -7vh;
+  }
+
+  
+  
 }
