@@ -7,7 +7,7 @@ function Home() {
     tl.fromTo(
       ".home-title",
       {
-        x: -350,
+        x: -150,
         opacity: 0,
         duration: 1.5
       },

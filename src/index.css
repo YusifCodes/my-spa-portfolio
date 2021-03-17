@@ -109,6 +109,10 @@
   z-index: 4;
 }
 
+.timeline-navigation{
+  visibility: hidden;
+}
+
 /*HOME*/
 
 .home-title {
@@ -769,10 +773,85 @@
     left: 2vw;
     padding-right: 5vh;
   }
+
+  .timeline-navigation{
+    visibility: visible;
+    position: absolute;
+  }
+
+  .timeline-child{
+    position: relative;
+    margin: 0;
+    padding-bottom: 6em;
+    padding-left: 1em;
+    top: 25vh;
+    left: 5.3vh;
+    transition: 1s ease-in-out all;
+    outline: none;
+    display: block;
+  }
+
+  .timeline-child:before{
+    content: '';
+    background-color: #949494;
+    position: absolute;
+    bottom: 0px;
+    top: .5em;
+    left: 0.45em;
+    width: 3px;
+    display: block;
+    pointer-events: none;
+  }
+
+  .timeline-child:after{
+    content: '';
+    background-color: #949494;
+    position: absolute;
+    left: 0;
+    height: 1em;
+    width: 1em;
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transition:all 0.3s ease-in-out;
+    outline: none;
+  }
+
+  .last-timeline-child:before{
+    visibility: hidden;
+    outline: none;
+  }
+
+  .timeline-active:after{
+    transition:ease-in-out all 0.5s;
+    background-color: #ff5353;
+    border-radius: 50%;
+    -webkit-transform:rotate(135deg) scale(1.5);
+    -moz-transform:rotate(135deg) scale(1.5);
+    -o-transform:rotate(135deg) scale(1.5);
+    outline: none;
+  }
+
+  .timeline-child:hover:after{
+    -webkit-transform:rotate(135deg) scale(1.5);
+    -moz-transform:rotate(135deg) scale(1.5);
+    -o-transform:rotate(135deg) scale(1.5);
+    outline: none;
+  }
+
+  .react-link{
+    position: relative;
+  }
   /* HOME */
   .line{
     height: .2em;
-    width: 1.85em
+    width: 1.5em;
+    margin: 0.175em
+  }
+
+  .hamburger{
+    top: 3vh;
+    visibility: hidden;
   }
 
   .title-style{
@@ -807,12 +886,13 @@
   .fa-ul-list li {
     display: block;
     height: 5vw;
+    width: 5vw;
     position: relative;
     top: -40vh;
+    left: 70vw;
   }
 
   .fa{
-    left: 70vw;
     font-size: 3rem;
     z-index: 2 !important;
   }

@@ -11,7 +11,7 @@ function react() {
     }
   }
   ReactDOM.render(
-    <BrowserRouter>
+    <BrowserRouter forceRefresh={true}>
       <BaseTemplate></BaseTemplate>
     </BrowserRouter>,
     document.querySelector(".react-container")
@@ -19,6 +19,32 @@ function react() {
 }
 
 react();
+
+const getComponent = () => {
+  let locArr = window.location.toString().split("/");
+  let loc = locArr.pop();
+  if (loc == "") {
+    return "home";
+  }
+  return loc;
+};
+
+const timelineBar = () => {
+  document.querySelectorAll(".timeline-child").forEach((item) => {
+    document
+      .querySelector(`.t-${getComponent()}`)
+      .classList.add("timeline-active");
+
+    item.addEventListener("click", () => {
+      document.querySelectorAll(".timeline-child").forEach((i) => {
+        i.classList.remove("timeline-active");
+      });
+      item.classList.add("timeline-active");
+    });
+  });
+};
+
+timelineBar();
 
 const navBarAnim = () => {
   const hamburger = document.querySelector(".hamburger");
